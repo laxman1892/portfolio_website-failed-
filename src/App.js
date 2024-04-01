@@ -39,6 +39,7 @@ function App() {
           <button className="download">Download CV</button>
         </div>
       </div>
+      {/* TODO menu bar tomorrow */}
     </div>
   );
 }
