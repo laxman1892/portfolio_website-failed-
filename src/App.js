@@ -1,5 +1,6 @@
 import "./App.css";
 import "./styles.css";
+import { IoPersonOutline, IoHomeOutline, IoCode, IoMailOutline } from "react-icons/io5";
 
 function App() {
   return (
@@ -40,6 +41,10 @@ function App() {
         </div>
       </div>
       {/* TODO menu bar tomorrow */}
+      <IoPersonOutline />
+      <IoHomeOutline />
+      <IoCode />
+      <IoMailOutline />
     </div>
   );
 }
