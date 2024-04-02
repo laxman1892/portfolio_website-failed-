@@ -1,6 +1,11 @@
 import "./App.css";
 import "./styles.css";
-import { IoPersonOutline, IoHomeOutline, IoCode, IoMailOutline } from "react-icons/io5";
+import {
+  IoPersonOutline,
+  IoHomeOutline,
+  IoCode,
+  IoMailOutline,
+} from "react-icons/io5";
 
 function App() {
   return (
@@ -40,11 +45,12 @@ function App() {
           <button className="download">Download CV</button>
         </div>
       </div>
-      
-      <IoPersonOutline />
-      <IoHomeOutline />
-      <IoCode />
-      <IoMailOutline />
+      <div className="menu-bar">
+        <IoPersonOutline style={{height: 30, width: 30}} />
+        <IoHomeOutline style={{height: 30, width: 30}} />
+        <IoCode style={{height: 30, width: 30}} />
+        <IoMailOutline style={{height: 30, width: 30}} />
+      </div>
     </div>
   );
 }

@@ -4,6 +4,7 @@
 }
 
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -276,4 +277,22 @@
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.menu-bar {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  top: 30vh;
+  right: 2vw;
+  height: 300px;
+  width: 40px;
+  /* padding: 20px 10px; */
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 12px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
 }
