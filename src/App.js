@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="container">
       <div className="header">
-        <h1>Laxman Rijal</h1>
+        <h3>Laxman Rijal</h3>
         <div className="header-right">
           <label className="theme-switch">
             <input type="checkbox" className="theme-switch__checkbox" />
@@ -46,10 +46,18 @@ function App() {
         </div>
       </div>
       <div className="menu-bar">
-        <IoPersonOutline style={{height: 30, width: 30}} />
-        <IoHomeOutline style={{height: 30, width: 30}} />
-        <IoCode style={{height: 30, width: 30}} />
-        <IoMailOutline style={{height: 30, width: 30}} />
+        <a href="#" className="home">
+          <IoHomeOutline style={{ height: 30, width: 30 }} />
+        </a>
+        <a href="#" className="skills">
+          <IoCode style={{ height: 30, width: 30 }} />
+        </a>
+        <a href="#" className="projects">
+          <IoPersonOutline style={{ height: 30, width: 30 }} />
+        </a>
+        <a href="#" className="contact">
+          <IoMailOutline style={{ height: 30, width: 30 }} />
+        </a>
       </div>
     </div>
   );
