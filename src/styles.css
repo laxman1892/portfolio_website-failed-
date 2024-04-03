@@ -2,6 +2,10 @@
     .container {
         min-width: 80%;
     }
+
+    .menu-bar {
+        right: 3vw;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -11,5 +15,15 @@
 
     .download {
         display: none;
+    }
+
+    .menu-bar {
+        justify-content: space-around;
+        flex-direction: row;
+        top: 94vh;
+        right: 43px;
+        height: 45px;
+        width: 300px;
+        margin: 0 auto;
     }
 }
