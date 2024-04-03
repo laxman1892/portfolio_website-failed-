@@ -46,17 +46,21 @@ function App() {
         </div>
       </div>
       <div className="menu-bar">
-        <a href="#" className="home">
+        <a href="www.google.com" className="home">
           <IoHomeOutline style={{ height: 30, width: 30 }} />
+          <span>Home</span>
         </a>
-        <a href="#" className="skills">
+        <a href="www.google.com" className="skills">
           <IoCode style={{ height: 30, width: 30 }} />
+          <span>Skills</span>
         </a>
-        <a href="#" className="projects">
+        <a href="www.google.com" className="projects">
           <IoPersonOutline style={{ height: 30, width: 30 }} />
+          <span>Projects</span>
         </a>
-        <a href="#" className="contact">
+        <a href="www.google.com" className="contact">
           <IoMailOutline style={{ height: 30, width: 30 }} />
+          <span>Contact</span>
         </a>
       </div>
     </div>

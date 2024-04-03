@@ -18,12 +18,10 @@
     }
 
     .menu-bar {
-        justify-content: space-around;
+        justify-content: space-evenly;
         flex-direction: row;
-        top: 94vh;
-        right: 43px;
-        height: 45px;
-        width: 300px;
-        margin: 0 auto;
+        top: 92%;
+        height: 50px;
+        width: 94%;
     }
 }
