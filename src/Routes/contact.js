@@ -12,6 +12,7 @@ function Contact() {
             <label htmlFor="message">Message </label>
             <textarea name="message" id="message"></textarea><br/>
             <button type="submit">Submit</button>
+            {/* comments */}
         </form>
     </div>
   )
