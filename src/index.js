@@ -5,12 +5,22 @@ import "./index.css";
 import App from "./App";
 import Contact from "./Routes/contact";
 import reportWebVitals from "./reportWebVitals";
+import Skills from "./Routes/skills";
+import Projects from "./Routes/projects";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      {
+        path: "skills",
+        element: <Skills />,
+      },
+      {
+        path: "projects",
+        element: <Projects />,
+      },
       {
         path: "contact",
         element: <Contact />,
