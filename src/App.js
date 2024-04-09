@@ -1,17 +1,32 @@
+import { useState } from "react";
 import "./App.css";
 import "./styles.css";
+import { Link, Outlet } from "react-router-dom";
 import {
   IoPersonOutline,
   IoHomeOutline,
   IoCode,
   IoMailOutline,
+  IoLogoLinkedin,
+  IoLogoInstagram,
+  IoLogoGithub,
+  IoLogoTwitter,
 } from "react-icons/io5";
+import Aboutme from "./aboutme";
 
 function App() {
+  const [showAboutMe, setShowAboutMe] = useState(true);
+
+  function handleLinkClick() {
+    setShowAboutMe(false);
+  }
+
   return (
     <div className="container">
       <div className="header">
-        <h3>Laxman Rijal</h3>
+        <h3>
+          <a href="/">LAXMAN</a>
+        </h3>
         <div className="header-right">
           <label className="theme-switch">
             <input type="checkbox" className="theme-switch__checkbox" />
@@ -42,26 +57,106 @@ function App() {
               </div>
             </div>
           </label>
-          <button className="download">Download CV</button>
+          <button type="submit" className="download">
+            Resume
+          </button>
         </div>
       </div>
       <div className="menu-bar">
-        <a href="www.google.com" className="home">
+        <Link
+          onClick={() => (!showAboutMe ? setShowAboutMe(true) : null)}
+          to="/"
+          className="home"
+        >
           <IoHomeOutline style={{ height: 30, width: 30 }} />
-          <span>Home</span>
-        </a>
-        <a href="www.google.com" className="skills">
+          {/* <div className="hover">Home</div> */}
+          {/* <hr
+            style={{
+              height: 1,
+              width: 50,
+              backgroundColor: "white",
+              border: "none",
+            }}
+          /> */}
+        </Link>
+        <Link onClick={handleLinkClick} to="/skills" className="skills">
           <IoCode style={{ height: 30, width: 30 }} />
-          <span>Skills</span>
-        </a>
-        <a href="www.google.com" className="projects">
+          {/* <div className="hover">Skills</div> */}
+          {/* <hr
+            style={{
+              height: 1,
+              width: 50,
+              backgroundColor: "white",
+              border: "none",
+            }}
+          /> */}
+        </Link>
+        <Link onClick={handleLinkClick} to="/projects" className="projects">
           <IoPersonOutline style={{ height: 30, width: 30 }} />
-          <span>Projects</span>
-        </a>
-        <a href="www.google.com" className="contact">
+          {/* <div className="hover">Projects</div> */}
+          {/* <hr
+            style={{
+              height: 1,
+              width: 50,
+              backgroundColor: "white",
+              border: "none",
+            }}
+          /> */}
+        </Link>
+        <Link onClick={handleLinkClick} to="/contact" className="contact">
           <IoMailOutline style={{ height: 30, width: 30 }} />
-          <span>Contact</span>
-        </a>
+          {/* <div className="hover">Contact</div> */}
+        </Link>
+      </div>
+
+      <div className="contact-bar">
+        <Link 
+          to="https://www.linkedin.com/in/laxman-rijal"
+          target="_blank"
+        >
+          <IoLogoLinkedin style={{ height: 30, width: 30 }} />
+          {/* <div className="hover">Linkedin</div> */}
+          {/* <hr
+            // style={{
+            //   height: 1,
+            //   width: 50,
+            //   backgroundColor: "white",
+            //   border: "none",
+            // }}
+          /> */}
+        </Link>
+        <Link to="https://www.github.com/laxman1892" target="_blank">
+          <IoLogoGithub style={{ height: 30, width: 30 }} />
+          {/* <div className="hover">Github</div> */}
+          {/* <hr
+            // style={{
+            //   height: 1,
+            //   width: 50,
+            //   backgroundColor: "white",
+            //   border: "none",
+            // }}
+          /> */}
+        </Link>
+        <Link to="https://www.instagram.com/lax.myann" target="_blank">
+          <IoLogoInstagram style={{ height: 30, width: 30 }} />
+          {/* <div className="hover">Instagram</div> */}
+          {/* <hr
+            // style={{
+            //   height: 1,
+            //   width: 50,
+            //   backgroundColor: "white",
+            //   border: "none",
+            // }}
+          /> */}
+        </Link>
+        <Link to="https://www.twitter.com/lax_myann" target="_blank">
+          <IoLogoTwitter style={{ height: 30, width: 30 }} />
+          {/* <div className="hover">Twitter</div> */}
+        </Link>
+      </div>
+      <div className="hero">
+        {showAboutMe && <Aboutme />}
+        <Outlet />
       </div>
     </div>
   );
