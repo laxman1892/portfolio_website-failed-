@@ -22,9 +22,11 @@ body {
 .light {
   background: url('../public/light-theme.jpg') ;
   background-size: cover;
+  transition: all .2s ease-in-out;
 }
 
 .dark {
   background: url('../public/dark-theme.jpg');
   background-size: cover;
+  transition: all .2s ease-in-out;
 }
