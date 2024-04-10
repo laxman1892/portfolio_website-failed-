@@ -14,8 +14,17 @@ body {
   font-size: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('../public/light-theme.jpg') ;
-  background-size: cover;
+  
   /* background-color: rgba(80, 50, 90, 1);
   background-blend-mode: multiply; */
+}
+
+.light {
+  background: url('../public/light-theme.jpg') ;
+  background-size: cover;
+}
+
+.dark {
+  background: url('../public/dark-theme.jpg');
+  background-size: cover;
 }
