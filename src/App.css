@@ -32,7 +32,7 @@
   color: #fff;
   font-size: 18px;
   cursor: pointer;
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease;
   position: relative;
   display: inline-block;
   outline: none;
@@ -150,6 +150,7 @@ hr {
   margin-top: 10px;
   padding-top: 20px;
   padding-left: 20px;
+  padding-right: 20px;
   height: 80vh;
   background: rgba(0, 0, 0, 0.07);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
@@ -178,6 +179,104 @@ hr {
 .hero-des h1 {
   margin: 0;
   /* text-shadow: 4px 5px 6px rgba(0, 0, 0, 0.5); */
+}
+
+/* ! CONTACT COMPONENT DESIGN */
+.contact {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* line-height: 1.4; */
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.field-left {
+  width: 50%;
+  line-height: 1.4;
+}
+
+.field-right {
+  width: 50%;
+  padding-left: 50px;
+}
+
+form {
+  background: rgba(0, 0, 0, 0.04);
+  /* backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); */
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 10px 30px;
+}
+
+.contact h1 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.msg {
+   border-bottom: 2px solid #fff;
+   margin: 0 0 15px 0;
+}
+
+.form-label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.form-input {
+  color: inherit;
+  font-family: inherit;
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  height: 30px;
+  width: 100%;
+}
+
+.contact span {
+  color: #dd3957;
+}
+
+.textarea {
+  padding-top: 10px;
+  resize: none;
+  min-height: 180px;
+}
+
+.textarea::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+.textarea::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #f3fdff;
+}
+
+.message-button {
+  border: none;
+  border-radius: 8px;
+  height: 50px;
+  width: 150px;
+  margin-bottom: 10px;
+  font-family: inherit;
+  font-size: 18px;
+  color: inherit;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 2px 4px 16px -2px rgba(31,38, 135, 0.18);
+}
+
+.message-button:hover {
+  background-color: white;
+  color: #000;
 }
 
 /* ? -------------------- THEME SWITCH --------------- */
