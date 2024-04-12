@@ -4,6 +4,7 @@
   /* margin-left: 50px; */
   height: 100vh;
   text-align: left;
+  overflow: hidden;
 }
 
 .header {
@@ -153,7 +154,7 @@ hr {
   padding-right: 20px;
   height: 80vh;
   background: rgba(0, 0, 0, 0.07);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+  box-shadow: 0 8px 16px 0 rgba(31, 38, 135, 0.3);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
@@ -181,7 +182,7 @@ hr {
   /* text-shadow: 4px 5px 6px rgba(0, 0, 0, 0.5); */
 }
 
-/* ! CONTACT COMPONENT DESIGN */
+/* ! ----------------------- CONTACT COMPONENT DESIGN ---------------------- */
 .contact {
   width: 100%;
   height: 100%;
@@ -208,6 +209,8 @@ form {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 10px 30px;
+  height: 75vh;
+  overflow: hidden;
 }
 
 .contact h1 {
@@ -216,8 +219,31 @@ form {
 }
 
 .msg {
+  position: relative;
    border-bottom: 2px solid #fff;
    margin: 0 0 15px 0;
+}
+
+.msg:before, .msg:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0.2rem;
+  background: #2add75;
+  bottom: -.2rem;
+  transition: .2s;
+}
+
+.msg:after {
+  right: 50%;
+}
+
+.msg:before {
+  left: 50%;
+}
+
+.msg.focus:before, .msg.focus:after {
+  width: 50%;
 }
 
 .form-label {
@@ -238,14 +264,49 @@ form {
   width: 100%;
 }
 
+.msg.invalid {
+  border-color: red;
+  transition: .2s;
+}
+
+.form-input.invalid {
+  animation: shake 0.6s 1;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
 .contact span {
   color: #dd3957;
+}
+
+.error {
+  margin: 0;
+  color: red;
+  font-size: 16px;
 }
 
 .textarea {
   padding-top: 10px;
   resize: none;
-  min-height: 180px;
+  min-height: 150px;
 }
 
 .textarea::-webkit-scrollbar {
