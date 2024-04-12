@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import "./styles.css";
 import "./index.css";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import {
   IoPersonOutline,
   IoHomeOutline,
@@ -16,8 +16,21 @@ import {
 import Aboutme from "./aboutme";
 
 function App() {
-  const [showAboutMe, setShowAboutMe] = useState(true);
+  const location = useLocation();
+  const [showAboutMe, setShowAboutMe] = useState(location.pathname === "/");
   const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = () => {
+      setIsDark(mediaQuery.matches);
+    };
+
+    handleChange(); // Initial check
+    mediaQuery.addEventListener('change', handleChange);
+
+    return () => mediaQuery.removeEventListener('change', handleChange);
+ }, []);
 
   function toggleTheme() {
     setIsDark(!isDark);
@@ -28,6 +41,10 @@ function App() {
     setShowAboutMe(false);
   }
 
+  useEffect(() => {
+    setShowAboutMe(location.pathname === "/");
+ }, [location]);
+
   return (
     <div id="hero-container" className={!isDark ? 'light' : 'dark'}>
       <div className="container">
@@ -37,7 +54,7 @@ function App() {
           </h3>
           <div className="header-right">
             <label className="theme-switch">
-              <input type="checkbox" className="theme-switch__checkbox" onClick={toggleTheme}/>
+              <input type="checkbox" className="theme-switch__checkbox" onClick={toggleTheme} checked={isDark}/>
               <div className="theme-switch__container">
                 <div className="theme-switch__clouds"></div>
                 <div className="theme-switch__stars-container">
@@ -88,7 +105,7 @@ function App() {
           /> */}
           </Link>
           <Link onClick={handleLinkClick} to="/skills" className="skills">
-            <IoCode style={{ height: 30, width: 30 }} />
+            <IoPersonOutline style={{ height: 30, width: 30 }} />
             {/* <div className="hover">Skills</div> */}
             {/* <hr
             style={{
@@ -100,7 +117,7 @@ function App() {
           /> */}
           </Link>
           <Link onClick={handleLinkClick} to="/projects" className="projects">
-            <IoPersonOutline style={{ height: 30, width: 30 }} />
+            <IoCode style={{ height: 30, width: 30 }} />
             {/* <div className="hover">Projects</div> */}
             {/* <hr
             style={{
